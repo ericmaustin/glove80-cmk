@@ -532,23 +532,23 @@
 
         syms {
             bindings = <
-&trans  &trans            &trans           &trans             &trans                                                                                                                        &trans             &trans                   &trans        &trans            &trans
-&trans  &trans            &none            &none              &trans                 &trans                                                                                 &trans          &trans             &trans                   &trans        &trans            &trans
-&trans  &kp EXCL          &kp AT_SIGN      &kp HASH           &kp DOLLAR             &kp PERCENT                                                                            &kp CARET       &kp AMPERSAND      &kp ASTRK                &kp QUESTION  &kp PIPE          &trans
-&trans  &mm_car_wrap      &mm_brace_wrap   &mm_brack_wrap     &mm_parens_wrap        &kp PLUS                                                                               &kp MINUS       &kp SLASH          &mm_quote_wrap           &kp COLON     &macro_tick_wrap  &trans
-&trans  &kp GREATER_THAN  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp EQUAL    &kp LEFT_SHIFT  &kp LALT  &trans  &none   &kp RIGHT_ALT  &kp RIGHT_SHIFT  &kp UNDERSCORE  &kp BACKSLASH      &mm_sqt_wrap             &kp SEMI      &kp TILDE         &none
-&trans  &none             &kp INS          &kp F11            &kp F12                             &mo 4           &trans    &trans  &trans  &trans         &mo 4                            &kp LA(BACKSPACE)  &macro_del_current_word  &none         &none             &trans
+&trans  &trans          &trans           &trans             &trans                                                                                                                        &trans         &trans          &trans            &trans     &trans
+&trans  &trans          &none            &none              &trans                 &trans                                                                                 &trans          &trans         &trans          &trans            &trans     &trans
+&trans  &kp EXCL        &kp AT_SIGN      &kp HASH           &kp DOLLAR             &kp PERCENT                                                                            &kp CARET       &kp AMPERSAND  &kp ASTRK       &kp QUESTION      &kp PIPE   &trans
+&trans  &mm_grave_wrap  &mm_brace_wrap   &mm_brack_wrap     &mm_parens_wrap        &kp PLUS                                                                               &kp MINUS       &kp SLASH      &mm_quote_wrap  &mm_quote_wrap    &kp COLON  &trans
+&trans  &kp TILDE       &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp EQUAL    &kp LEFT_SHIFT  &kp LALT  &trans  &none   &kp RIGHT_ALT  &kp RIGHT_SHIFT  &kp UNDERSCORE  &kp BACKSLASH  &mm_car_wrap    &kp GREATER_THAN  &kp SEMI   &none
+&trans  &none           &kp INS          &kp F11            &kp F12                             &mo 4           &trans    &trans  &trans  &trans         &mo 4                            &trans         &trans          &none             &none      &trans
             >;
         };
 
         nums {
             bindings = <
-&trans  &trans   &trans   &trans      &trans                                                                                                     &trans             &trans                   &trans     &trans     &trans
-&trans  &trans   &none    &none       &trans       &trans                                                                              &trans    &trans             &trans                   &trans     &trans     &trans
-&trans  &kp F1   &kp F2   &kp F3      &kp F4       &kp F5                                                                              &kp F6    &kp F7             &kp F8                   &kp F9     &kp F10    &trans
-&trans  &kp N1   &kp N2   &kp N3      &kp N4       &kp N5                                                                              &kp N6    &kp N7             &kp N8                   &kp N9     &kp N0     &trans
-&trans  &kp F11  &kp F12  &kp DOLLAR  &kp PERCENT  &kp PLUS  &kp LEFT_SHIFT  &kp LALT  &trans  &none   &kp RIGHT_ALT  &kp RIGHT_SHIFT  &kp PLUS  &kp ASTERISK       &kp SLASH                &kp EQUAL  &kp TILDE  &none
-&trans  &none    &kp INS  &kp F11     &kp F12                &kp N0          &mo 4     &trans  &trans  &mo 4          &kp N0                     &kp LA(BACKSPACE)  &macro_del_current_word  &none      &none      &trans
+&trans  &trans   &trans   &trans      &trans                                                                           &trans             &trans                   &trans     &trans     &trans
+&trans  &trans   &none    &none       &trans       &trans                                                    &trans    &trans             &trans                   &trans     &trans     &trans
+&trans  &kp F1   &kp F2   &kp F3      &kp F4       &kp F5                                                    &kp F6    &kp F7             &kp F8                   &kp F9     &kp F10    &trans
+&trans  &kp N1   &kp N2   &kp N3      &kp N4       &kp N5                                                    &kp N6    &kp N7             &kp N8                   &kp N9     &kp N0     &trans
+&trans  &kp F11  &kp F12  &kp DOLLAR  &kp PERCENT  &kp PLUS  &kp N0  &trans  &trans  &none   &trans  &kp N0  &kp PLUS  &kp ASTERISK       &kp SLASH                &kp EQUAL  &kp TILDE  &none
+&trans  &none    &kp INS  &kp F11     &kp F12                &trans  &mo 4   &trans  &trans  &mo 4   &trans            &kp LA(BACKSPACE)  &macro_del_current_word  &none      &none      &trans
             >;
         };
 
