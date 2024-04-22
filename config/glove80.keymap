@@ -31,7 +31,7 @@
             label = "LAYER_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo 0>, <&to 6>;
+            bindings = <&mo 1>, <&to 5>;
         };
 
         magic: magic_hold_tap {
@@ -405,42 +405,42 @@
         macro_parens_wrap: macro_parens_wrap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(RIGHT_ARROW) &kp RPAR &kp LEFT_ARROW &kp LA(LEFT_ARROW) &kp LEFT_PARENTHESIS>;
+            bindings = <&kp RIGHT_ARROW &kp LA(LEFT_ARROW) &kp LEFT_PARENTHESIS &kp LA(RIGHT_ARROW) &kp RPAR>;
             label = "MACRO_PARENS_WRAP";
         };
 
         macro_brack_wrap: macro_brack_wrap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(RIGHT_ARROW) &kp RIGHT_BRACKET &kp LEFT_ARROW &kp LA(LEFT_ARROW) &kp LEFT_BRACKET>;
+            bindings = <&kp RIGHT_ARROW &kp LA(LEFT_ARROW) &kp LEFT_BRACKET &kp LA(RIGHT) &kp RIGHT_BRACKET>;
             label = "MACRO_BRACK_WRAP";
         };
 
         macro_brace_wrap: macro_brace_wrap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(RIGHT_ARROW) &kp RIGHT_BRACE &kp LEFT_ARROW &kp LA(LEFT_ARROW) &kp LEFT_BRACE>;
+            bindings = <&kp RIGHT_ARROW &kp LA(LEFT_ARROW) &kp LEFT_BRACE &kp LA(RIGHT) &kp RIGHT_BRACE>;
             label = "MACRO_BRACE_WRAP";
         };
 
         macro_carrot_wrap: ht_carrot_wrap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(RIGHT_ARROW) &kp GREATER_THAN &kp LEFT_ARROW &kp LA(LEFT_ARROW) &kp LESS_THAN>;
+            bindings = <&kp RIGHT &kp LA(LEFT_ARROW) &kp LESS_THAN &kp LA(RIGHT_ARROW) &kp GREATER_THAN>;
             label = "HT_CARROT_WRAP";
         };
 
         macro_quote_wrap: macro_quote_wrap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(RIGHT_ARROW) &kp DOUBLE_QUOTES &kp LEFT &kp LA(LEFT_ARROW) &kp DOUBLE_QUOTES>;
+            bindings = <&kp RIGHT_ARROW &kp LA(LEFT_ARROW) &kp DOUBLE_QUOTES &kp LA(RIGHT_ARROW) &kp DOUBLE_QUOTES>;
             label = "MACRO_QUOTE_WRAP";
         };
 
         macro_sqt_wrap: macro_sqt_wrap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(RIGHT_ARROW) &kp GRAVE &kp LEFT &kp LA(LEFT_ARROW) &kp GRAVE>;
+            bindings = <&kp RIGHT_ARROW &kp LA(LEFT_ARROW) &kp GRAVE &kp LA(RIGHT) &kp GRAVE>;
             label = "MACRO_SQT_WRAP";
         };
 
@@ -461,8 +461,22 @@
         macro_tick_wrap: macro_tick_wrap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(RIGHT_ARROW) &kp SQT &kp LEFT &kp LA(LEFT_ARROW) &kp SQT>;
+            bindings = <&kp RIGHT_ARROW &kp LA(LEFT_ARROW) &kp SQT &kp LA(RIGHT_ARROW) &kp SQT>;
             label = "MACRO_TICK_WRAP";
+        };
+
+        macro_cut_word: macro_cut_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(RIGHT) &kp LA(LS(LEFT)) &kp LG(X)>;
+            label = "MACRO_CUT_WORD";
+        };
+
+        macro_copy_word: macro_copy_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(RIGHT) &kp LA(LS(LEFT)) &kp LG(C)>;
+            label = "MACRO_COPY_WORD";
         };
     };
 
@@ -478,14 +492,14 @@
             bindings = <&kp Z>;
             key-positions = <47 48>;
             timeout-ms = <75>;
-            layers = <0>;
+            layers = <1>;
         };
 
         combo_j {
             bindings = <&kp J>;
             key-positions = <62 61>;
             timeout-ms = <75>;
-            layers = <0>;
+            layers = <1>;
         };
 
         combo_lock_nums {
@@ -493,20 +507,31 @@
             key-positions = <70 73>;
             timeout-ms = <100>;
             require-prior-idle-ms = <300>;
-            layers = <0>;
+            layers = <1>;
         };
 
         combo_lock_0 {
-            bindings = <&to 0>;
+            bindings = <&to 1>;
             key-positions = <70 73>;
             timeout-ms = <125>;
             require-prior-idle-ms = <300>;
-            layers = <6 3 2>;
+            layers = <5 3 2>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
+
+        qwerty {
+            bindings = <
+&kp F1      &kp F2                    &kp F3                  &kp F4               &kp F5                                                                                                                                                                                     &kp F6                   &kp F7            &kp F8            &kp F9             &kp F10
+&kp LBKT    &kp N1                    &kp N2                  &kp N3               &kp N4             &kp N5                                                                                                                                                          &kp N6  &kp N7                   &kp N8            &kp N9            &kp N0             &kp RBKT
+&kp TAB     &kp Q                     &kp W                   &kp E                &kp R              &kp T                                                                                                                                                           &kp Y   &kp U                    &kp I             &kp O             &kp SINGLE_QUOTE   &mm_slashes
+&kp ESC     &ht_kp_lt LEFT_CONTROL A  &ht_kp_lt LALT S        &ht_kp_lt LGUI D     &ht_kp_lt LSHFT F  &kp G                                                                                                                                                           &kp H   &ht_kp_rt RIGHT_SHIFT J  &ht_kp_rt LGUI K  &ht_kp_rt RALT L  &ht_kp_rt RCTRL P  &kp MINUS
+&kp GRAVE   &kp Z                     &kp X                   &kp C                &kp V              &kp B   &ht_kp LEFT_SHIFT ESCAPE  &ht_kp LEFT_CONTROL MINUS  &ht_kp LEFT_ALT UNDER  &ht_kp RIGHT_ALT TILDE  &ht_kp RIGHT_CONTROL COLON  &ht_kp RIGHT_SHIFT TAB  &kp N   &kp M                    &mm_comma_semi    &mm_period_colon  &mm_question_exc   &kp RSHFT
+&magic 6 0  &ht_kp LSHIFT HOME        &ht_kp LCTRL PAGE_DOWN  &ht_kp LALT PAGE_UP  &ht_kp LCMD END            &ht_mo 2 BACKSPACE        &ht_mo 3 DELETE            &key_repeat            &to 4                   &ht_mo 3 RETURN             &ht_mo 2 SPACE                  &kp LEFT                 &kp DOWN          &kp UP            &kp RIGHT          &to 4
+            >;
+        };
 
         cmk {
             bindings = <
@@ -515,18 +540,7 @@
 &kp TAB     &kp Q                     &kp W                   &kp D                &kp F              &kp K                                                                                                                                                        &kp Y   &kp U                    &kp I             &kp L             &kp MINUS          &mm_slashes
 &kp ESC     &ht_kp_lt LEFT_CONTROL A  &ht_kp_lt LALT S        &ht_kp_lt LGUI T     &ht_kp_lt LSHFT R  &kp G                                                                                                                                                        &kp H   &ht_kp_rt RIGHT_SHIFT N  &ht_kp_rt LGUI E  &ht_kp_rt RALT O  &ht_kp_rt RCTRL P  &mm_question_exc
 &kp GRAVE   &kp Z                     &kp X                   &kp C                &kp V              &kp B   &ht_kp LEFT_SHIFT ESCAPE  &ht_kp LEFT_CONTROL MINUS  &ht_kp LEFT_ALT SLASH  &ht_kp RIGHT_ALT SEMI  &ht_kp RIGHT_CONTROL SQT  &ht_kp RIGHT_SHIFT TAB  &kp J   &kp M                    &mm_comma_semi    &mm_period_colon  &kp SQT            &kp RSHFT
-&magic 7 0  &ht_kp LSHIFT HOME        &ht_kp LCTRL PAGE_DOWN  &ht_kp LALT PAGE_UP  &ht_kp LCMD END            &ht_mo 2 BACKSPACE        &ht_mo 3 DELETE            &key_repeat            &to 4                  &ht_mo 3 RETURN           &ht_mo 2 SPACE                  &kp LEFT                 &kp DOWN          &kp UP            &kp RIGHT          &to 4
-            >;
-        };
-
-        qwerty {
-            bindings = <
-&kp F1      &kp F2                    &kp F3                  &kp F4               &kp F5                                                                                                                                                                                                                           &kp F6                   &kp F7            &kp F8            &kp F9             &kp F10
-&kp LBKT    &kp N1                    &kp N2                  &kp N3               &kp N4             &kp N5                                                                                                                                                                                                &kp N6  &kp N7                   &kp N8            &kp N9            &kp N0             &kp RBKT
-&kp TAB     &kp Q                     &kp W                   &kp E                &kp R              &kp T                                                                                                                                                                                                 &kp Y   &kp U                    &kp I             &kp O             &kp SINGLE_QUOTE   &mm_slashes
-&kp ESC     &ht_kp_lt LEFT_CONTROL A  &ht_kp_lt LALT S        &ht_kp_lt LGUI D     &ht_kp_lt LSHFT F  &kp G                                                                                                                                                                                                 &kp H   &ht_kp_rt RIGHT_SHIFT J  &ht_kp_rt LGUI K  &ht_kp_rt RALT L  &ht_kp_rt RCTRL P  &kp MINUS
-&kp GRAVE   &kp Z                     &kp X                   &kp C                &kp V              &kp B   &ht_kp LEFT_SHIFT ESCAPE  &ht_kp LEFT_CONTROL LEFT_PARENTHESIS  &ht_kp LEFT_ALT LEFT_BRACKET  &ht_kp RIGHT_ALT RIGHT_BRACKET  &ht_kp RIGHT_CONTROL RIGHT_PARENTHESIS  &ht_kp RIGHT_SHIFT TAB  &kp N   &kp M                    &mm_comma_semi    &mm_period_colon  &mm_question_exc   &kp RSHFT
-&magic 7 0  &ht_kp LSHIFT HOME        &ht_kp LCTRL PAGE_DOWN  &ht_kp LALT PAGE_UP  &ht_kp LCMD END            &ht_mo 2 BACKSPACE        &ht_mo 3 DELETE                       &key_repeat                   &to 5                           &ht_mo 3 RETURN                         &ht_mo 2 SPACE                  &kp LEFT                 &kp DOWN          &kp UP            &kp RIGHT          &to 4
+&magic 6 0  &ht_kp LSHIFT HOME        &ht_kp LCTRL PAGE_DOWN  &ht_kp LALT PAGE_UP  &ht_kp LCMD END            &ht_mo 2 BACKSPACE        &ht_mo 3 DELETE            &key_repeat            &to 4                  &ht_mo 3 RETURN           &ht_mo 2 SPACE                  &kp LEFT                 &kp DOWN          &kp UP            &kp RIGHT          &to 4
             >;
         };
 
@@ -554,23 +568,12 @@
 
         nav {
             bindings = <
-&kp C_BRIGHTNESS_DEC  &kp LS(C_BRIGHTNESS_INC)   &kp C_PREVIOUS  &kp C_NEXT               &kp C_PLAY_PAUSE                                                                                              &kp RS(C_MUTE)  &kp C_VOLUME_UP          &kp C_VOL_DN      &trans                     &trans
-&trans                &trans                     &trans          &trans                   &trans            &trans                                                                &trans                &trans          &trans                   &trans            &trans                     &trans
-&trans                &macro_new_line_above      &kp LA(LEFT)    &kp UP_ARROW             &kp LA(RIGHT)     &macro_paste_replace                                                  &macro_paste_replace  &kp HOME        &kp UP_ARROW             &kp END           &macro_new_line_above      &trans
-&trans                &macro_new_line_below_mac  &kp LEFT_ARROW  &kp DOWN_ARROW           &kp RIGHT         &kp PAGE_UP                                                           &kp PAGE_UP           &kp LEFT_ARROW  &kp DOWN_ARROW           &kp RIGHT         &macro_new_line_below_mac  &trans
-&trans                &macro_del_current_word    &kp LS(TAB)     &macro_sel_current_word  &kp TAB           &kp PAGE_DOWN         &trans  &trans  &trans  &trans  &trans  &trans  &kp PAGE_DOWN         &kp LS(TAB)     &macro_sel_current_word  &kp TAB           &macro_del_current_word    &trans
-&trans                &none                      &none           &kp F11                  &kp F12                                 &trans  &trans  &trans  &to 0   &trans  &trans                        &kp LA(LEFT)    &kp LA(DOWN)             &kp LA(UP_ARROW)  &kp LA(RIGHT)              &to 0
-            >;
-        };
-
-        nav_qwerty {
-            bindings = <
-&kp C_BRIGHTNESS_DEC  &kp LS(C_BRIGHTNESS_INC)   &kp C_PREVIOUS  &kp C_NEXT               &kp C_PLAY_PAUSE                                                                                              &kp RS(C_MUTE)  &kp C_VOLUME_UP          &kp C_VOL_DN      &trans                     &trans
-&trans                &trans                     &trans          &trans                   &trans            &trans                                                                &trans                &trans          &trans                   &trans            &trans                     &trans
-&trans                &macro_new_line_above      &kp LA(LEFT)    &kp UP_ARROW             &kp LA(RIGHT)     &macro_paste_replace                                                  &macro_paste_replace  &kp HOME        &kp UP_ARROW             &kp END           &macro_new_line_above      &trans
-&to 1                 &macro_new_line_below_mac  &kp LEFT_ARROW  &kp DOWN_ARROW           &kp RIGHT         &kp PAGE_UP                                                           &kp PAGE_UP           &kp LEFT_ARROW  &kp DOWN_ARROW           &kp RIGHT         &macro_new_line_below_mac  &trans
-&trans                &macro_del_current_word    &kp LS(TAB)     &macro_sel_current_word  &kp TAB           &kp PAGE_DOWN         &trans  &trans  &trans  &trans  &trans  &trans  &kp PAGE_DOWN         &kp LS(TAB)     &macro_sel_current_word  &kp TAB           &macro_del_current_word    &trans
-&trans                &none                      &none           &trans                   &trans                                  &trans  &trans  &trans  &to 1   &trans  &trans                        &kp LA(LEFT)    &kp LA(DOWN)             &kp LA(UP_ARROW)  &kp LA(RIGHT)              &to 1
+&trans  &trans                     &trans              &trans            &trans                                                                                                     &trans          &trans          &trans            &trans                     &trans
+&none   &kp C_BRIGHTNESS_DEC       &kp C_BRI_UP        &kp C_PREV        &kp C_NEXT            &kp C_PLAY_PAUSE                                                  &kp C_MUTE         &kp C_VOL_UP    &kp C_VOL_DN    &kp C_POWER       &none                      &trans
+&trans  &macro_new_line_above      &kp LG(LEFT)        &kp PAGE_UP       &kp LG(RIGHT)         &kp LCMD                                                          &kp RCMD           &kp HOME        &kp UP_ARROW    &kp END           &macro_new_line_above      &trans
+&trans  &macro_new_line_below_mac  &kp LA(LEFT_ARROW)  &kp PAGE_DOWN     &kp LA(RIGHT)         &kp LCTRL                                                         &kp RIGHT_CONTROL  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT         &macro_new_line_below_mac  &trans
+&trans  &macro_del_current_word    &macro_cut_word     &macro_copy_word  &macro_paste_replace  &kp LEFT_SHIFT    &trans  &trans  &trans  &trans  &trans  &trans  &kp RIGHT_SHIFT    &caps_word      &kp LS(TAB)     &kp TAB           &macro_del_current_word    &trans
+&trans  &none                      &none               &kp F11           &kp F12                                 &trans  &trans  &trans  &to 0   &trans  &trans                     &kp LA(LEFT)    &kp LA(DOWN)    &kp LA(UP_ARROW)  &kp LA(RIGHT)              &to 0
             >;
         };
 
@@ -581,7 +584,7 @@
 &kp TAB                &kp Q     &kp W                             &kp E                   &kp R               &kp T                                                                                   &kp Y   &kp U     &kp I      &kp O         &kp SEMI         &kp BSLH
 &kp ESC                &kp A     &kp S                             &kp D                   &kp F               &kp G                                                                                   &kp H   &kp J     &kp K      &kp L         &kp P            &kp SQT
 &ht_kp_lt LSHFT GRAVE  &kp Z     &kp X                             &kp C                   &kp V               &kp B   &kp LSHFT  &kp LCTRL  &kp LGUI  &kp LGUI  &kp RCTRL  &ht_kp_rt RIGHT_SHIFT TAB  &kp N   &kp M     &kp COMMA  &kp DOT       &kp FSLH         &kp ENTER
-&magic 7 0             &kp HOME  &ht_kp_lt LEFT_CONTROL PAGE_DOWN  &ht_kp_lt RALT PAGE_UP  &ht_kp_lt LGUI END          &kp SPACE  &kp BSPC   &kp RALT  &kp RALT  &kp RGUI   &kp SPACE                          &kp LEFT  &kp DOWN   &kp UP_ARROW  &kp RIGHT_ARROW  &to 0
+&magic 6 0             &kp HOME  &ht_kp_lt LEFT_CONTROL PAGE_DOWN  &ht_kp_lt RALT PAGE_UP  &ht_kp_lt LGUI END          &kp SPACE  &kp BSPC   &kp RALT  &kp RALT  &kp RGUI   &kp SPACE                          &kp LEFT  &kp DOWN   &kp UP_ARROW  &kp RIGHT_ARROW  &to 1
             >;
         };
 
@@ -591,8 +594,8 @@
 &none        &none            &none            &none            &none            &none                                                             &none  &none  &none  &none  &none  &none
 &none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none  &none  &none
 &bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none  &bootloader
-&sys_reset   &to 0            &to 1            &to 2            &to 6            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
-&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 0
+&sys_reset   &to 1            &to 0            &to 2            &to 5            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
+&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 1
             >;
         };
     };
